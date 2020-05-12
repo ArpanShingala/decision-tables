@@ -2,9 +2,12 @@
 
 ### About decision tables
 ```
-Decision tables are a "precise yet compact" (ref. Wikipedia) way of representing conditional logic, and are well suited to business level rules.
+Decision tables are a "precise yet compact" (ref. Wikipedia) way of representing conditional
+ logic, and are well suited to business level rules.
 
-Drools supports managing rules in a spreadsheet format. Supported formats are Excel (XLS), and CSV, which means that a variety of spreadsheet programs (such as Microsoft Excel, OpenOffice.org Calc amongst others) can be utilized.
+Drools supports managing rules in a spreadsheet format. Supported formats are Excel (XLS), 
+and CSV, which means that a variety of spreadsheet programs (such as Microsoft Excel, 
+OpenOffice.org Calc amongst others) can be utilized.
 ```
 
 ### Links

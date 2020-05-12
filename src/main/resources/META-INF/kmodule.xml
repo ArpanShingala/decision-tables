@@ -3,7 +3,7 @@
         xmlns="http://www.drools.org/xsd/kmodule">
 
     <kbase name="DecisionTable" packages="examples">
-        <ksession name="DecisionTable" type="stateless"/>
+        <ksession name="DecisionTable" type="stateful"/>
     </kbase>
 
 </kmodule>

@@ -2,6 +2,7 @@ package com.demo.rules;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.StatelessKieSession;
 
 import java.util.Arrays;
@@ -16,7 +17,7 @@ public class DroolsDecisionTableExample {
         KieContainer kieContainer = kieServices.getKieClasspathContainer();
 
         // create a stateless session
-        StatelessKieSession kieSession = kieContainer.newStatelessKieSession("DecisionTable");
+        KieSession kieSession = kieContainer.newKieSession("DecisionTable");
 
         // setup driver test data
         Driver driver = new Driver();
@@ -29,7 +30,10 @@ public class DroolsDecisionTableExample {
         policy.setType("COMPREHENSIVE");
 
         // pass the objects to kie session and execute
-        kieSession.execute(Arrays.asList(new Object[]{driver, policy}));
+        kieSession.insert(driver);
+        kieSession.insert(policy);
+
+        kieSession.fireAllRules();
 
         System.out.println("BASE PRICE IS: " + policy.getBasePrice());
         System.out.printf("DISCOUNT IS: %d%%", policy.getDiscountPercent());
